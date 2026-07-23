@@ -1,66 +1,58 @@
-// Online C compiler to run C program online
+//Euro to rs 
+//Euro to dollar 
+//Euro to Euro 
 #include <stdio.h>
 
 int main() {
-    int ch = 0 ;
-    int sum=0 ; 
-    printf("Enter 1 for starter \n");
-    printf("Enter 2 for veg menu \n"); 
-    printf("Enter 3 for non veg menu \n");
-    scanf("%d",&ch); 
-    if(ch==1 ){
-        menu: 
-        printf("=============Menu==============\n");
-        int dish; 
-        printf("1.Dish1  200\n"); 
-        printf("2.Dish2  250\n"); 
-        printf("3.Dish3  350\n"); 
-        printf("Enter 4 to return back to starter \n"); 
-        printf("Enter 5 for exit"); 
-        printf("Choose Your dish and enter the dish number\n");
-    
-        scanf("%d",&dish); 
-        if(dish == 1){
-            sum =sum+200;
-            goto menu; 
+    // printf("Enter 1 for Euro to Converter "); 
+    // printf("Enter 2 for Rupee to Converter "); 
+    printf("Enter 1 for Euro to Rupees Conversion\n"); 
+    printf("Enter 2 for Euro to dollar Conversion\n"); 
+    printf("Enter 3 for Euro to Euro  Conversion\n"); 
+    printf("Enter 4 for exit \n"); 
+    Converter:
+    int choice; 
+    scanf("%d",&choice); 
+    switch(choice){
+         
+        case 1 : {
+            float amount; 
+            printf("Enter Amount in Euro \n"); 
+            scanf("%f",&amount); 
+            float Rupee = amount* 110.2;
+            printf("%f Euro = %f Rupee \n",amount, Rupee); 
+            printf("Enter Your Choice from the menu Again\n"); 
+            
+            goto Converter; 
         }
-        else if(dish == 2 ){
-            sum = sum+250; 
-            goto menu; 
-        }
-        else if(dish == 3){
-            sum = sum+350; 
+        case 2 :{
+            float amount; 
+            printf("Enter Amount in Dollar\n"); 
+            scanf("%f",&amount); 
+            float Dollar = amount*1.1385;
+            printf("%f Euro  = %f Dollar  \n",amount, Dollar);
+            printf("Enter Your Choice from the menu Again\n"); 
+            goto Converter ;
+            
             
         }
-        else if(dish== 4){
-            goto menu ; 
+        case 3:{
+            float amount ; 
+            printf("Enter your Amount\n"); 
+            scanf("%f",&amount);
+            printf("%f Euro  = %f Euro \n",amount, amount );
+            printf("Enter Your Choice from the menu Again\n"); 
+            goto Converter ; 
+            
+            
         }
-        
-        else{
-            printf("Enter a valid order number \n"); 
+        case 4 :{
+            printf("Thanks for using the calculator eixiting...........\n"); 
         }
-        
+        default{
+            printf("Enter a valid option "); 
+        }
     }
-    else if(ch == 2){
-        printf("Entering veg section.........\n"); 
-        
-        
-    }
-    else if(ch == 3){
-        printf("Entering non veg section\n"); 
-    }
-    else{
-        printf("Enter a valid option \n"); 
-    }
-    int total = sum; 
-    float CGST = 0.18*sum ; 
-    float SGST = 0.18*sum ; 
-    float final_total = sum+CGST+SGST;
-    printf("SGST %f\n",SGST); 
-    printf("CGST %f\n",CGST); 
-    printf("Your Grand Total :  %f\n",final_total); 
-    
-    
     
     
 
