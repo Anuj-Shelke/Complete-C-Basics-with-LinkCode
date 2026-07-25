@@ -1,175 +1,111 @@
-// Program For hotel Order Management System using switch case
-#include <stdio.h>
-int main()
-{
-    int CGST= 0 ; 
-    int SGST= 0 ; 
-    int sum =0 ;
-    int total = 0 ; 
-    int choice = 0;
-    menu: 
-    printf("Enter 1 for starters \n");
-    printf("Enter 2 for veg menu \n");
-    printf("Enter 3 for non-veg menu \n");
+//ATM Management System 
+#include<stdio.h>
+int main(){
+ 
 
-    
-    scanf("%d", &choice);
-    switch (choice)
-    {
-    case 1:
-    {
-        starter:
-        printf("Enter Your choice \n");
-        printf("1.Dish1   200Rs\n");
-        printf("2.Dish2    250Rs\n");
-        printf("3.Dish3    300Rs\n");
-        printf("Enter 4 to Enter billing section\n");
-        printf("Enter 5 to go back to Main menu \n");
-        scanf("%d", &choice);
-        switch (choice)
-        {
-        case 1:
-        {
-            sum = sum + 200;
-            goto starter; 
-            break;
-        }
-        case 2:
-        {
-            sum = sum + 250;
-            goto starter; 
-            break;
-        }
-        case 3:
-        {
-            sum = sum + 300;
-            goto starter; 
-            break;
-        }
-        case 4:{
-            printf("Entering bill section \n");
-            goto bill;
-        }
-        case 5:{
-            printf("Returning back to main menu \n");
-            goto menu; 
-        }
-        default:
-        {
-            printf("Enter a valid option\n");
-            break; 
-        }
-        
-        }
-    }
-    case 2:
-    {   Veg: 
-        printf("Enter your choice\n");
-        printf("1.Veg Dish1      200Rs\n");
-        printf("2.Veg Dish2    250Rs\n");
-        printf("3.Veg Dish3    300Rs\n");
-        printf("Enter 4 to Enter billing section\n");
-        printf("Enter 5 to go back to Main menu \n");
-        scanf("%d", &choice);
-        switch (choice)
-        {
-        case 1:
-        {
-            sum = sum + 200;
-            goto Veg; 
-            break;
-        }
-        case 2:
-        {
-            sum = sum + 250;
-            goto Veg; 
-            break;
-        }
-        case 3:
-        {
-            sum = sum + 300;
-            goto Veg; 
-            break;
-        }
-        case 4:{
-            printf("Entering bill section ");
-            goto bill;
-        }
-        case 5:{
-            printf("Returning back to main menu \n");
-            goto menu; 
-        }
-        default:
-        {
-            printf("Enter a valid option\n");
-            break; 
-        }
-        
-        }
-    }
-    case 3:
-    {   NV_:
-        printf("Enter your choice\n");
-        printf("1.NV_Dish1      200Rs\n");
-        printf("2.NV_Dish2    250Rs\n");
-        printf("3.NV_Dish3    300Rs\n");
-        printf("Enter 4 to Enter billing section\n");
-        printf("Enter 5 to go back to Main menu \n");
-        scanf("%d", &choice);
-        switch (choice)
-        {
-        case 1:
-        {
-            sum = sum + 200;
-            goto NV_;
-            break;
-        }
-        case 2:
-        {
-            sum = sum + 250;
-            goto NV_;
-            break;
-        }
-        case 3:
-        {
-            sum = sum + 300;
-            goto NV_;
-            break;
+int in; 
 
-        }
-        case 4:{
-            printf("Entering bill section \n");
-            goto bill;
-        }
-        case 5:{
-            printf("Returning back to main menu \n");
-            goto menu; 
-        }
-        default:
-        {
-            printf("Enter a valid option\n");
+int amount ; 
+int balance =1000; 
+int pin ; 
+menu:
+printf("Enter 1 to Credit Cast  \n");
+printf("Enter 2 for Cash withdrawl \n");
+printf("Enter 3 for Balance check\n");
+printf("Enter 4 for exit \n");
+int choice;
+scanf("%d",&choice); 
+switch(choice){
+    case 1 :{
+       
+        balance = 1000; 
+        int receipt = 0 ; 
+        printf("Enter Your password\n");
+        scanf("%d",&pin);
+        if(pin == 1234){
+            printf("Enter The amount to be credited\n");
+            scanf("%d",&amount); 
+            balance = balance+amount; 
             
+        printf("Enter 1 if you want receipt\n"); 
+        scanf("%d",&receipt); 
+        if(receipt == 1){
+            printf("Your updated Balance to : %d\n",balance); 
+            goto menu;
+        }
+        break; 
+        }
+        else{
+            printf("Invalid pin \n Try Again After Some time...............\n"); 
             break; 
         }
-
         
-        }
     }
 
-        default:{
-            printf("Enter a valid input \n"); 
+    case 2: {
+        int in ; 
+        int withdraw; 
+        printf("Enter amount to  Withdraw\n"); 
+        scanf("%d",&withdraw);
+        printf("Enter Your pin "); 
+        
+        if(withdraw > balance ){
+            printf("Insufficient Balance \n"); 
+            printf("Enter 1 for balance enquiry else \n Enter 2 to get back main menu \n"); 
+            scanf("%d",&in); 
+            switch(in){
+                case 1:{
+                    goto check;
+                    break;  
+                }
+                case 2:{
+                    goto menu;  
+                    break; 
+                }
+
         }
-    
+        
+
 
     }
-    bill:
-    printf("----------------------bill------------------------\n");
-    CGST =0.18*sum;
-    SGST =0.18*sum; 
-    total = sum+CGST+SGST;
-    printf("Bill  %d\n",sum);
-    printf("CGST  %d\n",CGST);
-    printf("SGST  %d\n",SGST);
-    printf("Total %d\n",total);
-    printf(".....................Thanks for Visiting.....................\n");
+    else{
+        printf("Enter your pin "); 
+        scanf("%d",&pin); 
+        if(pin ==1234){
+        balance = balance - withdraw; 
+        goto menu; 
+        break; 
+        }
+    }
+    break;
+
+}
+
+case 3 : {
+    check: 
+
+    printf("Enter Your pin\n"); 
+    scanf("%d",&pin); 
+    if(pin == 1234){
+        printf("Your balance is %d\n",balance); 
+        goto menu; 
+        
+    }
+    else{
+        printf("Invalid pin /n Try Again After some time\n"); 
+        goto check; 
+    }
+    break; 
+
+
+
+}
+case 4:{
+    printf(".....................Thanks for Visiting.....................\n"); 
+    break; 
+}
+
+
+
+}
 }
