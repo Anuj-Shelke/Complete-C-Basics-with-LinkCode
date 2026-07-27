@@ -1,15 +1,23 @@
 // While loop Link_code C language
-//Code to orint factorial of a given number  ; 
-#include<stdio.h> 
+// Code to Check if a number is a prime number  ;
+#include<stdio.h>
 int main(){
-    int fact = 1 ; 
-    int i = 1; 
+    int count = 0 ; 
+    int i = 1 ; 
     int n = 0 ; 
-    printf("Enter the value of n "); 
+    printf("Enter number to check if a number is prime or not : ");
     scanf("%d",&n); 
-    while(i<=n){
-        fact = fact*i ;
-        i++; 
+    while(i <=  n ){
+        
+     if(n%i  == 0 ){
+         count++; 
+     }
+     i++; 
+     
+     
     }
-    printf("The factorial of a number %d is %d \n",n , fact); 
+    if(count ==2 ){
+        printf("The number is a prime number "); 
+    }
+    return 0; 
 }
