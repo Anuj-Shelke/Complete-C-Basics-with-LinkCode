@@ -1,16 +1,15 @@
 // While loop Link_code C language
-//Code to orint factors of a given number ; 
+//Code to orint factorial of a given number  ; 
 #include<stdio.h> 
 int main(){
-    int i = 1 ; 
+    int fact = 1 ; 
+    int i = 1; 
     int n = 0 ; 
     printf("Enter the value of n "); 
     scanf("%d",&n); 
     while(i<=n){
-        if(n%i == 0 ){
-            printf("The factor of the number is %d is %d \n",n ,i); 
-            
-        }
+        fact = fact*i ;
         i++; 
     }
+    printf("The factorial of a number %d is %d \n",n , fact); 
 }
