@@ -1,16 +1,19 @@
 // While loop Link_code C language
-// Code to print all even number from 0 to 10  ;
+// Code to print Table of any entered number ;
 
 #include <stdio.h>
 
 int main()
-{
+{   int n = 0 ; 
 
-    int i = 10 ;
-    while (i >= 0 )
+    int i = 1  ;
+    printf("Enter number to print the table of the given number"); 
+    scanf("%d",&n); 
+    while (i <= 10  )
+   
     {
-        printf("%d \n", i);
-        i--;
+        printf("%d X %d == %d \n ",i,n,i*n); 
+        i++ ; 
     }
-    return 0;
+    
 }
