@@ -1,19 +1,12 @@
 // While loop Link_code C language
-// Code to print Table of any entered number ;
-
 #include <stdio.h>
-
 int main()
-{   int n = 0 ; 
+{
+    int ch = 65;
 
-    int i = 1  ;
-    printf("Enter number to print the table of the given number"); 
-    scanf("%d",&n); 
-    while (i <= 10  )
-   
+    while (ch <= 90)
     {
-        printf("%d X %d == %d \n ",i,n,i*n); 
-        i++ ; 
+        printf("%d : %c | %d : %c \n", ch, ch, ch + 32, ch + 32);
+        ch++;
     }
-    
 }
