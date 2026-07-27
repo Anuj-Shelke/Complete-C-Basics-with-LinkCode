@@ -1,16 +1,16 @@
 // While loop Link_code C language
-// Code to print number from 1 to 10 using while loop ;
+// Code to print all even number from 1 to 20 ;
 
 #include <stdio.h>
 
 int main()
 {
 
-    int i = 1;
-    while (i <= 10)
+    int i = 2;
+    while (i <= 20)
     {
         printf("%d \n", i);
-        i++;
+        i += 2;
     }
-    return 0; 
+    return 0;
 }
