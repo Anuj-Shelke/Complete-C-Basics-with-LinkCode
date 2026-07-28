@@ -1,33 +1,27 @@
-// While loop Link_code C language
-// Code to Check if a number is a prime number  ;
-// While loop Link_code C language
-// Code to Check if a number is a prime number  ;
-#include<stdio.h>
-int main(){
-    int count = 0 ; 
+// Code to check if a number is a perfect number 
+#include <stdio.h>
+
+int main() {
+    int flag = 1; 
+    int n ; 
+    printf("Enter number to check if a number is a perfect number :"); 
+    scanf("%d",&n);
+    int sum = 0 ; 
     int i = 1 ; 
-    int n = 0 ; 
-    printf("Enter number to check if a number is prime or not : \n ");
-    scanf("%d",&n); 
-    while(i <=  n ){
-        
-     if(n%i  == 0 ){
-          count++; 
-        if(count >  3){
-            break; 
+    
+    while(i<= n/2 ){
+        if(n%i == 0){
+             printf("%d\n",i );
+             sum = sum+ i ;
+          
         }
-         
-     }
-     i++; 
-     
-     
+        i++;
+
     }
-    if(count ==2 ){
-        printf("The number is a prime number \n "); 
+   
+    if(sum == n){
+        printf("The number is a prefect number %d",sum ); 
     }
-    else{
-        printf("The number is not prime number "); 
-        
-    }
-    return 0; 
+    
+    return 0;
 }
