@@ -1,27 +1,20 @@
-// Code to check if a number is a perfect number 
+// Code to find result of power and base 
 #include <stdio.h>
 
 int main() {
-    int flag = 1; 
-    int n ; 
-    printf("Enter number to check if a number is a perfect number :"); 
-    scanf("%d",&n);
-    int sum = 0 ; 
+    int base,power,result; 
+    result = 1; 
     int i = 1 ; 
+    printf("Enter base "); 
+    scanf("%d",&base); 
+    printf("Enter power "); 
+    scanf("%d",&power); 
+    while(i<= power){
+        result = (base* result); 
+        i++; 
+    }
+    printf("The result is %d\n",result); 
     
-    while(i<= n/2 ){
-        if(n%i == 0){
-             printf("%d\n",i );
-             sum = sum+ i ;
-          
-        }
-        i++;
-
-    }
-   
-    if(sum == n){
-        printf("The number is a prefect number %d",sum ); 
-    }
     
     return 0;
 }
