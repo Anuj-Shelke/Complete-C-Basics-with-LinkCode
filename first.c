@@ -1,20 +1,13 @@
-// Code to find result of power and base 
-#include <stdio.h>
-
-int main() {
-    int base,power,result; 
-    result = 1; 
-    int i = 1 ; 
-    printf("Enter base "); 
-    scanf("%d",&base); 
-    printf("Enter power "); 
-    scanf("%d",&power); 
-    while(i<= power){
-        result = (base* result); 
-        i++; 
+// Code to reverse a number ; 
+#include<stdio.h>
+int main(){
+    int n, temp; 
+    temp = 0 ; 
+    printf("Enter number to be reversed "); 
+    scanf("%d",&n); 
+    while(n != 0){
+        temp = temp*10+(n%10); 
+        n=n/10; 
     }
-    printf("The result is %d\n",result); 
-    
-    
-    return 0;
+    printf("The number reversed is %d",temp); 
 }
