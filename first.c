@@ -1,18 +1,45 @@
-//Code to print fabonaci series with using loop ; 
-#include<stdio.h> 
+#include<stdio.h>
+
 int main(){
-    int n = 10; 
-    int count =0 ;
-    int first= 0  ; 
-    int second = 1 ; 
-    int next ; 
-    while(count<10){
-        printf("%d ",first); 
-        next = first +second; 
-        first = second ; 
-        second = next ; 
-        count++; 
+
+    int n= 0 ;
+
+    int sum = 0 ; 
+
+    int i = 1; 
+
+    printf("Enter number \n"); 
+
+    scanf("%d",&n); 
+
+    while(i<=n/2){
+
+        if(n%i==0){
+
+            sum = sum+i;
+
+            
+
+        }
+
+        i++; 
+
+        
+
     }
-    return 0; 
-    
+
+    printf("the sum of the factors is %d\n",sum);
+
+    if(sum == n){
+
+        printf("The number is a perfect number \n"); 
+
+    }
+
+    else{
+
+        printf("The number is not a perfect number \n"); 
+
+    }
+
 }
