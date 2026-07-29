@@ -1,45 +1,19 @@
 #include<stdio.h>
-
 int main(){
-
-    int n= 0 ;
-
-    int sum = 0 ; 
-
-    int i = 1; 
-
-    printf("Enter number \n"); 
-
-    scanf("%d",&n); 
-
-    while(i<=n/2){
-
-        if(n%i==0){
-
-            sum = sum+i;
-
-            
-
-        }
-
-        i++; 
-
+    printf("Numbers from 1 to 10 using for loop \n");
+    int n = 10 ; 
+    for(int i = 1 ; i < n ; i++){
+        printf("%d\n",i);
         
-
     }
-
-    printf("the sum of the factors is %d\n",sum);
-
-    if(sum == n){
-
-        printf("The number is a perfect number \n"); 
-
+    printf("Now printing from 10 to  1 \n");
+    //Print number from 1 to 10 
+    for(int i = 10 ; i >=1; i--){
+        printf("%d\n",i); 
     }
-
-    else{
-
-        printf("The number is not a perfect number \n"); 
-
+    printf("ASCII Values \n"); 
+    for(int i = 65 ; i < 90 ; i++){
+        printf("%d : %c\n",i,i); 
     }
-
+    
 }
