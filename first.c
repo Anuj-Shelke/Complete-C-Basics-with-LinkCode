@@ -1,17 +1,18 @@
-// Code to Enter Base and power and enter their result 
-#include <stdio.h>
+//Code to print fabonaci series with using loop ; 
+#include<stdio.h> 
 int main(){
-    int base,power ;
-    int temp = 1; 
-    int count = 0 ; 
-    printf("Enter power "); 
-    scanf("%d",&power); 
-    printf("Enter base "); 
-    scanf("%d",&base); 
-    while(count != power){
-        temp = base* temp; 
+    int n = 10; 
+    int count =0 ;
+    int first= 0  ; 
+    int second = 1 ; 
+    int next ; 
+    while(count<10){
+        printf("%d ",first); 
+        next = first +second; 
+        first = second ; 
+        second = next ; 
         count++; 
     }
-    printf("The result of the calculation is %d\n",temp); 
+    return 0; 
     
 }
