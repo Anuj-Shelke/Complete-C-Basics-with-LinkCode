@@ -1,13 +1,25 @@
-// Code to print multiplication table of a given number using For Loop 
+// Code to Print Alphabets in pattern 
 #include <stdio.h>
 
 int main() {
-    int n = 0 ; 
-    printf("Enter number to print multiplication table of :"); 
-    scanf("%d",&n); 
-    for(int i = 1  ; i<= 10 ; i++){
-        printf("%d X %d = %d\n",i,n,i*n); 
-        
+    int ch = 65;
+for(int row = 1 ; row <=5 ; row++){
+    for(char coln = 1; coln <= row; coln++){
+        printf("%c",ch);
     }
-    printf("Thank You"); 
+    printf("\n"); 
+    ch++; 
+}
+ch = ch-2; 
+for(int row = 4 ; row >= 0 ; row--){
+    for(char coln = 1; coln <= row; coln++){
+        printf("%c",ch);
+    }
+    printf("\n"); 
+    ch++; 
+}
+
+
+
+    return 0;
 }
