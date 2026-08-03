@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 //Code to Print this pattern
 // 12345
 // 1234
@@ -9,9 +8,6 @@
 // 123
 // 1234
 // 12345
-=======
-// Code to Print Star  in pattern 
->>>>>>> 689881c (WIP: saving changes before rebase)
 #include <stdio.h>
 
 int main() {
