@@ -1,11 +1,11 @@
-// Code to Print Alphabets in pattern 
+//Code to Print Star Pattern 
 #include <stdio.h>
 
 int main() {
-    int ch = 65;
+    // int ch = 65;
 for(int row = 1 ; row <=5 ; row++){
     for(char coln = 1; coln <= row; coln++){
-        printf("%c",ch);
+        printf("*");
     }
     printf("\n"); 
     ch++; 
@@ -13,7 +13,7 @@ for(int row = 1 ; row <=5 ; row++){
 ch = ch-2; 
 for(int row = 4 ; row >= 0 ; row--){
     for(char coln = 1; coln <= row; coln++){
-        printf("%c",ch);
+        printf("*");
     }
     printf("\n"); 
     ch++; 
