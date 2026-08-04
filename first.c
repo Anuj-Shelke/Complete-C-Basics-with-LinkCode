@@ -7,9 +7,11 @@ Code to print Empty Arrow
 ***    ***
 **      **
 *        *
-
-
-
+*        *
+**      **
+***    ***
+****  ****
+**********
 */
 
 int main() {
@@ -31,6 +33,18 @@ int main() {
         
     }
     for(row = 1; row <= 5; row++){
+        for(coln = 1 ; coln <=row; coln++){
+            printf("*"); 
+        }
+         
+        for(int s = 9; s>=row*2 ; s--){
+            printf(" "); 
+        }
+        for(sp =1; sp<=row ; sp++){
+            printf("*"); 
+        }
+        
+        
         
         printf("\n");
     }
