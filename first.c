@@ -1,15 +1,11 @@
 
 #include <stdio.h>
 /*code to print this pattern{
-     *
-    ***
-  *****
-  *******
- *********
-  *******
-   *****
-    ***
-     *
+     1
+    121
+   12121
+  1212121
+ 121212121
     
 }
      */
@@ -18,44 +14,27 @@ int main() {
     int row = 0; 
     int space = 0; 
     int coln = 0 ; 
-    
-    for(row = 0 ; row < 4 ; row++){
+    int i = 1; 
+    for(row = 0 ; row < 5 ; row++){
         for(space=4  ; space >= row ; space--){
             printf(" "); 
           
         }
         
-        
-        for(coln = 0; coln <= 2*row ; coln++){
-            printf("*");
+        i = 1; 
+        for(coln = 0 ; coln <= row*2 ; coln++){
+            if(coln% 2 == 0  ){
+                i = 1; 
+            }
+            printf("%d",i);
+            i++; 
         }
-        
-        space = 0; 
-        // if(space){
-            // printf("\n"); 
-        // }
-        
-        
-        // for(coln = 10; coln <= 2*row; coln--){
-        //     printf("$");
-        // }
+     
+     
         printf("\n");
         
         
     }
-    // printf("**********");
     
-    for(row = 0 ; row < 5 ; row++){
-    
-   
-  for(space=0 ; space <= row ; space++){
-            printf(" "); 
-        }
-       for(coln = 8; coln >= row*2; coln--){
-            printf("*");
-        }
-        printf("\n"); 
-    }
-
     return 0;
 }
