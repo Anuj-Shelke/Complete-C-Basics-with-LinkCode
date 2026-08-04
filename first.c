@@ -1,10 +1,11 @@
 /*
 Code to print this pattern with space
-           *
-         * * *
-       * * * * *
-     * * * * * * *
    * * * * * * * * *
+     * * * * * * *
+       * * * * *
+         * * *
+           *
+        
    
   */
 
@@ -15,11 +16,21 @@ int main() {
     int coln = 1; 
     int sp = 1; 
     
-    for(row = 0 ; row < 5; row++){
-        for(sp = 5 ; sp > row; sp--){
+    // for(row = 0 ; row < 5; row++){
+    //     for(sp = 5 ; sp > row; sp--){
+    //         printf("  ");
+    //     }
+    //     for(coln = 0; coln <= row*2; coln++){
+    //         printf(" *"); 
+    //     }
+    //     printf("\n"); 
+    // }
+    
+    for(row = 0  ; row < 5; row++){
+        for(sp = 0  ; sp <=row ; sp++){
             printf("  ");
         }
-        for(coln = 0; coln <= row*2; coln++){
+        for(coln = 9 ; coln >row*2; coln--){
             printf(" *"); 
         }
         printf("\n"); 
