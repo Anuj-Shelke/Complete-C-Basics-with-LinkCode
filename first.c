@@ -1,54 +1,20 @@
-// Online C compiler to run C program online
+// Code to print sum of digit 
 #include <stdio.h>
-/*
-Code to print Empty Arrow
-**********
-****  ****
-***    ***
-**      **
-*        *
-*        *
-**      **
-***    ***
-****  ****
-**********
-*/
 
 int main() {
-    int row = 1; 
-    int coln = 1; 
-    int sp = 1; 
-    for(row = 5; row >=1 ; row--){
-        for(sp =1; sp<=row ; sp++){
-            printf("*"); 
-        }
-        for(int s = 9; s>=row*2 ; s--){
-            printf(" "); 
-        }
-        for(coln = 1 ; coln <=row; coln++){
-            printf("*"); 
-        }
-        
-        printf("\n"); 
-        
-    }
-    for(row = 1; row <= 5; row++){
-        for(coln = 1 ; coln <=row; coln++){
-            printf("*"); 
-        }
-         
-        for(int s = 9; s>=row*2 ; s--){
-            printf(" "); 
-        }
-        for(sp =1; sp<=row ; sp++){
-            printf("*"); 
-        }
-        
-        
-        
-        printf("\n");
-    }
+    int n ; 
+    printf("Enter the number to add digits of "); 
+    scanf("%d",&n); 
+ 
+    int digit = 0; 
+    int sum = 0; 
     
-    
+    do{
+        digit= n%10; 
+        sum = digit+sum; 
+        n = n/10;  
+    }while(n != 0 );
+    printf("Sum of digit is %d",sum); 
+
     return 0;
 }
