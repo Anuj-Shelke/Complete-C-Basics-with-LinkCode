@@ -1,20 +1,22 @@
-// Code to print sum of digit 
+// Code to print R using star Pattern
 #include <stdio.h>
 
 int main() {
-    int n ; 
-    printf("Enter the number to add digits of "); 
-    scanf("%d",&n); 
- 
-    int digit = 0; 
-    int sum = 0; 
+    int row = 0; 
+    int coln = 0; 
     
-    do{
-        digit= n%10; 
-        sum = digit+sum; 
-        n = n/10;  
-    }while(n != 0 );
-    printf("Sum of digit is %d",sum); 
+    for(row = 1; row <= 10 ; row++){
+        for(coln = 1; coln <= 10; coln++){
+            if(coln == 1 || row == 1 || row == 6   || (row == 7 && coln == 2)|| (row == 8 && coln == 4 ) ||(row == 10 && coln == 6 )|| (row == 9 && coln == 6)||(coln == 10 && row <=5)){
+                printf("*"); 
+            }
+            else{
+                printf(" "); 
+            }
+            
+        }
+        printf("\n"); 
+    }
 
     return 0;
 }
