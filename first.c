@@ -1,62 +1,155 @@
-// Online C compiler to run C program online
+// Currency Converter using do-while loop
+
 #include <stdio.h>
 
-int main() {
-    int n1 ;
-    int n2 ; 
-    int area_circle ; 
-    int area_square; 
-    int area_triangle ;
-    int choice = 1;
-    int ct = 1; 
-    int height ; 
-    int base  ; 
-    int r  ; 
-    int side ; 
-    
-    
-    
-   
-   do{
-        
-       
-    
-       printf("Enter 1 for area of circle \n"); 
-       printf("Enter 2 for area of triangle  \n"); 
-       printf("Enter 3 for square \n"); 
-       
-       scanf("%d",&choice);
-       switch(choice){
-           case 1: {
-               printf("Enter Radius \n"); 
-               scanf("%d",&r);
-               area_circle = 3.14*r*r; 
-               printf("Area of circle is  %d \n",area_circle);
-               break; 
-           }
-          case 2 :{
-              
-              printf("Enter base \n"); 
-              scanf("%d",&base); 
-              printf("Enter height \n"); 
-              scanf("%d",&height); 
-              area_triangle = 0.5*base*height; 
-              printf("Area of Triangle %d\n",area_triangle);
-              break; 
-          }
-          case 3 :{
-              printf("Enter side of square  \n"); 
-              scanf("%d",&side); 
-             area_square= side*side; 
-              printf("Area of square is %d \n",area_square); 
-              break; 
-          }
-        
-       }
-       printf("Enter 1 if you want to continue the program\n"); 
-       scanf("%d",&ct); 
-   }while(ct == 1);
-   printf("--------------Thank----------------- \n"); 
+int main()
+{
+    int choice;
+    int subchoice;
+    int ct = 1;
+    float amount, result;
+
+    do
+    {
+        printf("\n========== Currency Converter ==========\n");
+        printf("1. Rupee Converter\n");
+        printf("2. Dollar Converter\n");
+        printf("3. Euro Converter\n");
+        printf("Enter your choice : ");
+        scanf("%d", &choice);
+
+        switch(choice)
+        {
+        case 1:
+        {
+            do
+            {
+                printf("\n---- Rupee Converter ----\n");
+                printf("1. Rupee to Dollar\n");
+                printf("2. Rupee to Euro\n");
+                printf("Enter your choice : ");
+                scanf("%d", &subchoice);
+
+                switch(subchoice)
+                {
+                case 1:
+                    printf("Enter amount in Rupees : ");
+                    scanf("%f", &amount);
+
+                    result = amount / 95.95;
+                    printf("Dollar = %.2f\n", result);
+                    break;
+
+                case 2:
+                    printf("Enter amount in Rupees : ");
+                    scanf("%f", &amount);
+
+                    result = amount / 109.86;
+                    printf("Euro = %.2f\n", result);
+                    break;
+
+                default:
+                    printf("Invalid Choice\n");
+                }
+
+                printf("Press 1 to continue Rupee Converter otherwise 0 : ");
+                scanf("%d", &ct);
+
+            } while(ct == 1);
+
+            break;
+        }
+
+        case 2:
+        {
+            do
+            {
+                printf("\n---- Dollar Converter ----\n");
+                printf("1. Dollar to Rupee\n");
+                printf("2. Dollar to Euro\n");
+                printf("Enter your choice : ");
+                scanf("%d", &subchoice);
+
+                switch(subchoice)
+                {
+                case 1:
+                    printf("Enter amount in Dollar : ");
+                    scanf("%f", &amount);
+
+                    result = amount * 95.95;
+                    printf("Rupees = %.2f\n", result);
+                    break;
+
+                case 2:
+                    printf("Enter amount in Dollar : ");
+                    scanf("%f", &amount);
+
+                    result = amount / 1.17;
+                    printf("Euro = %.2f\n", result);
+                    break;
+
+                default:
+                    printf("Invalid Choice\n");
+                }
+
+                printf("Press 1 to continue Dollar Converter otherwise 0 : ");
+                scanf("%d", &ct);
+
+            } while(ct == 1);
+
+            break;
+        }
+
+        case 3:
+        {
+            do
+            {
+                printf("\n---- Euro Converter ----\n");
+                printf("1. Euro to Rupee\n");
+                printf("2. Euro to Dollar\n");
+                printf("Enter your choice : ");
+                scanf("%d", &subchoice);
+
+                switch(subchoice)
+                {
+                case 1:
+                    printf("Enter amount in Euro : ");
+                    scanf("%f", &amount);
+
+                    result = amount * 109.86;
+                    printf("Rupees = %.2f\n", result);
+                    break;
+
+                case 2:
+                    printf("Enter amount in Euro : ");
+                    scanf("%f", &amount);
+
+                    result = amount * 1.17;
+                    printf("Dollar = %.2f\n", result);
+                    break;
+
+                default:
+                    printf("Invalid Choice\n");
+                }
+
+                printf("Press 1 to continue Euro Converter otherwise 0 : ");
+                scanf("%d", &ct);
+
+            } while(ct == 1);
+
+            break;
+        }
+
+        default:
+            printf("Invalid Main Menu Choice\n");
+        }
+
+        printf("\nPress 1 to go to Main Menu otherwise 0 : ");
+        scanf("%d", &ct);
+
+    } while(ct == 1);
+
+    printf("\nThank You!\n");
 
     return 0;
 }
