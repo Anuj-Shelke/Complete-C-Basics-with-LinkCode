@@ -1,13 +1,21 @@
-// Code to print array element using for loop in reverse order and then printing sum of given array element
+// Code to take ten numbers from user and check if they are even or odd 
 #include <stdio.h>
 
 int main() {
-    int sum = 0 ; 
-  int arr[10]={1,2,3,4,5,6,7,8,9,10};
-  for(int i = 9 ; i >=0 ; i--){
-      printf("%d\n",arr[i]); 
-      sum = sum + arr[i]; 
-  }
-  printf("Sum of array elements is %d",sum); 
+    int count = 0 ; 
+    printf("Enter any 10 numbers to check if they are even or odd :\n");
+    int arr[10]; 
+    for(int i = 0 ;i< 10; i++){
+         scanf("%d",&arr[i]); 
+    }
+    for(int i = 0 ; i < 10 ; i++){
+        if(arr[i]%2==0){
+            count++; 
+        }
+       
+    }
+     printf("there are total %d even numbers in array\n",count); 
+     printf("There are total %d odd numbers in array\n",10-count); 
+   
     return 0;
 }
