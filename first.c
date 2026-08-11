@@ -1,43 +1,54 @@
-// Code to take find second Greatest element in an array 
-
+// Online C compiler to run C program online
 #include <stdio.h>
 
 int main() {
-    int max = 0 ; 
-    int min = 0 ; 
-    int avg = 0 ; 
-    int sum = 0 ; 
-    printf("Enter any 5  numbers to check if they are even or odd :\n");
-    int arr[5]; 
-    for(int i = 0 ;i< 5; i++){
-         scanf("%d",&arr[i]); 
-         
-    }
-    min = arr[0];
-    max = arr[0]; 
-    for(int i = 0 ; i < 5 ; i++){
-         
-      if (  arr[i]> max ){
-         max = arr[i];
-      }
-      
-      
-     
-       
-    }
-    int max_2 = 0 ; 
-    for(int i = 0 ; i< 5 ; i++){
-      if(arr[i]>max_2 && arr[i]<max){
-         max_2= arr[i]; 
-    }
+    int arr[10] ; 
+    int even[10]; 
+    int odd[10]; 
+    int e_count =0 ; 
 
-   }
-   
+    printf("Enter array elements "); 
+    for(int i = 0 ; i < 10 ; i++){
+        scanf("%d",&arr[i]);
 
-     printf("the second greatest elemnent in an Array is  %d\n",max_2); 
-     
-     
+    }
+    for(int i = 0; i < 10; i++){
+        if(arr[i] % 2== 0 ){
+            even[i] = arr[i] ; 
+            e_count++; 
+        }
+        else{
+            odd[i] = arr[i]; 
+
+            
+        }
+    }
+    printf("There are total %d Even Numbers \n",e_count); 
+    printf("The even Array elements are : ");
+    for(int i = 0 ; i < 10 ; i++){
+        if(arr[i]==0){
+            continue; 
+        }
+        else{
+        printf("%d\n",even[i]); 
+        }
+        
     
-   
+    }
+    printf("There are total %d Odd Numbers \n",(10-e_count)); 
+    printf("The Odd Array elements are : ");
+     for(int i = 0 ; i < 10 ; i++){
+        if(arr[i]==0){
+            continue; 
+        }
+        else{
+        printf("%d\n",odd[i]); 
+        }
+        
+    
+    }
+
+    
+
     return 0;
 }
