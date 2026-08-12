@@ -2,23 +2,50 @@
 #include <stdio.h>
 
 int main() {
-     int arr[5]={1,2,3,4,5};
-     int n = 5; 
+    int arr[10]; 
+    int set_1[5]; 
+    int set_2[5];
+    int count = 5;  
+    int flag = 0 ; 
+    int i = 0 ;
+    int j = 0 ;  
+    printf("Enter Elements for Array one \n"); 
+    for(i = 0 ; i < 5; i++){
+        scanf("%d",&set_1[i]); 
+    }
+    printf("Enter Elements for Array two \n"); 
+    for(j =0 ; j < 5; j++){
+        scanf("%d",&set_2[j]); 
+    }
 
-     int j = 0 ; 
-     int i = 0 ; 
-     int k = 0 ; 
-     for(i =0 ; i < 5 ; i++){
-        int temp = arr[n-1];
-        for(j =n-1 ; j > 0 ;j--){
-            arr[j] = arr[j-1]; 
+    for(i = 0 ; i < 5; i++){
+        arr[i] = set_1[i]; 
+
+    }
+    for(i = 0 ; i < 5; i++){
+        flag = 0 ; 
+        for(j = 0 ;  j < 5; j++){
+            if(arr[j] == set_2[i]){
+                flag = 1; 
+                
+                break; 
+            }
         }
-        arr[j] = temp; 
-        for(k= 0 ; k< 5; k++ ){
-            printf(" %d",arr[k]); 
+
+          if(flag == 0){
+        arr[count] = set_2[i];
+        count++; 
+          
+            
         }
-        printf("\n"); 
-     }
+        
+    }
+  
+    
+    printf("The final Array elements are : "); 
+    for(int i = 0 ; i< count; i++){
+        printf("%d ",arr[i]); 
+    }
 
     return 0;
 }
