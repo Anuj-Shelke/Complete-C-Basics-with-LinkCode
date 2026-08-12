@@ -5,7 +5,7 @@ int main() {
     int arr[10]; 
     int set_1[5]; 
     int set_2[5];
-    int count = 5;  
+    int count = 0;  
     int flag = 0 ; 
     int i = 0 ;
     int j = 0 ;  
@@ -18,21 +18,21 @@ int main() {
         scanf("%d",&set_2[j]); 
     }
 
-    for(i = 0 ; i < 5; i++){
-        arr[i] = set_1[i]; 
+    // for(i = 0 ; i < 5; i++){
+    //     arr[i] = set_1[i]; 
 
-    }
+    // }
     for(i = 0 ; i < 5; i++){
         flag = 0 ; 
         for(j = 0 ;  j < 5; j++){
-            if(arr[j] == set_2[i]){
+            if(set_1[j] == set_2[i]){
                 flag = 1; 
                 
                 break; 
             }
         }
 
-          if(flag == 0){
+          if(flag == 1){
         arr[count] = set_2[i];
         count++; 
           
@@ -42,7 +42,7 @@ int main() {
     }
   
     
-    printf("The final Array elements are : "); 
+    printf("The  Intersection of the array element is  : "); 
     for(int i = 0 ; i< count; i++){
         printf("%d ",arr[i]); 
     }
