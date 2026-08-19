@@ -1,19 +1,20 @@
-// Code to print addition of two numbers using pointers 
-#include<stdio.h>
+// Code to print Value and Address of Array elements 
+#include <stdio.h>
 
 int main() {
-    int num = 5;
-    int num1 = 5; 
-    int *p1 = &num;
-    int *p2 = &num1 ;
-    int sum =  *p1+*p2;
+    int arr[] = {1,2,3,4,5}; 
+    for(int i= 0 ; i < 5 ; i++){
+        printf("%d ",arr[i]); 
+        printf("\n"); 
+    }
+    printf("\n-----------------------------------------\n"); 
+    int *ptr = &arr[0]; 
+   
 
-    // printf("%d \n",num); 
-    // printf("%d \n",*p1);
-    // printf("%d \n",*p2);
-    printf("%u \n",sum);
-
-
+    for(int i = 0 ; i < 5; i++){
+        printf("%d -> %u\n",(*ptr+i),(ptr+i)); 
+    }
+    
 
     return 0;
 }
