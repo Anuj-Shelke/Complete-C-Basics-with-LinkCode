@@ -1,20 +1,21 @@
-// Code to print Value and Address of Array elements 
+// Online C Linear Search of Element 
 #include <stdio.h>
 
 int main() {
-    int arr[] = {1,2,3,4,5}; 
-    for(int i= 0 ; i < 5 ; i++){
-        printf("%d ",arr[i]); 
-        printf("\n"); 
-    }
-    printf("\n-----------------------------------------\n"); 
-    int *ptr = &arr[0]; 
-   
-
-    for(int i = 0 ; i < 5; i++){
-        printf("%d -> %u\n",(*ptr+i),(ptr+i)); 
-    }
+    int element = 0; 
+    int arr[6] = {1,2,3,4,5,6}; 
+    printf("Enter element to search for "); 
+    scanf("%d",&element);
     
+    for(int i = 0 ; i < sizeof(arr); i++){
+        if(element = arr[i]){
+    printf("The element %d is found at index %d",arr[i],i);
+            return 0; 
+        }
+        else {
+                printf("The element not found "); 
+        }
+    }
 
     return 0;
 }
