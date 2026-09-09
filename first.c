@@ -1,31 +1,25 @@
+// Code for Bubble Sort ; 
 
 #include <stdio.h>
 
 int main() {
-   int arr[5] = {1,2,3,4,5}; 
-    int element = 10; 
-    int low = 0 ; 
-    int found = 0 ; 
-    int high = sizeof(arr)/sizeof(arr[0]-1); 
-    while(high>= low){
-        int mid = (low+high)/2; 
-        if(arr[mid] == element){
-            printf("The element %d is found at index %d",arr[mid],mid);
-            found = 1; 
-            break; 
-        }
-        else if(arr[mid]<element){
-             low = mid+1;
-        }
-        else{
-            high = mid-1; 
-        }
+  int arr[6] = {6,5,4,3,2,1}; 
+  int size = sizeof(arr)/sizeof(arr[0]); 
+  for(int i = 0 ; i < size-1; i++ ){
+      for(int j =0 ; j < size-i-1; j++){
+          if(arr[j+1]<arr[j]){
+              int temp = arr[j]; 
+              arr[j] = arr[j+1]; 
+              arr[j+1] = temp; 
+          }
         
-    }
-    if(found== 0){
-        printf("The element not found in the array "); 
-    }
-    
-    return 0;
+      }
+     
+      
+  }
+     printf("The sorted array is : "); 
+      for(int i = 0 ; i < size; i++){
+          printf("%d ",arr[i]); 
+      }
 }
     
