@@ -1,25 +1,21 @@
-// Code for selection sort revised 
+//Insertion sort .
+
 #include <stdio.h>
 
 int main() {
-    int arr[] = {1,5,2,4,3}; 
-    int size = sizeof(arr)/sizeof(arr[0]); 
-    for(int i = 0 ; i < size-1 ; i++){
-        int min = i ; 
-        for(int j =i+1 ; j < size; j++){
-            if(arr[j] < arr[min]){
-                min = j;
-            }; 
-            
+    int arr[]= {5,4,6,7,2,1}; 
+    int size =sizeof(arr)/sizeof(arr[0]); 
+    for(int i = 1 ; i < size ; i++){
+        int j = i-1; 
+        int key = arr[i]; 
+        while(j>=0 && arr[j] > key){
+            arr[j+1] = arr[j]; 
+            j--; 
         }
-        int temp = arr[i]; 
-        arr[i] = arr[min]; 
-        arr[min] = temp ; 
-        
+        arr[j+1] = key; 
     }
-
-    for(int i = 0 ; i < size ; i++){
+    for (int i = 0  ; i < size  ; i++){
         printf("%d ",arr[i]); 
     }
-    
+  
 }
